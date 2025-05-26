@@ -6,7 +6,7 @@ export default function Home() {
       <br/>
       <button
         onClick={async () => {
-          let data = await fetch('/api/proxy/data/foo', { method: 'GET', credentials: 'include' })
+          let data = await fetch('/api/proxy/data', { method: 'GET', credentials: 'include' })
           data = await data.json()
           alert(JSON.stringify(data.data))
         }}
