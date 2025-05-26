@@ -6,7 +6,9 @@ export default function Home() {
       <br/>
       <button
         onClick={async () => {
-          await fetch('/api/proxy/data', { method: 'GET', credentials: 'include' })
+          let data = await fetch('/api/proxy/data', { method: 'GET', credentials: 'include' })
+          data = await data.json()
+          alert(JSON.stringify(data.data))
         }}
       >
         GET DATA
@@ -14,7 +16,9 @@ export default function Home() {
       <br/><br/>
       <button
         onClick={async () => {
-          await fetch('/api/login', { method: 'POST' })
+          let data = await fetch('/api/login', { method: 'POST' })
+          data = await data.json()
+          alert(JSON.stringify(data))
         }}
       >
         LOGIN
