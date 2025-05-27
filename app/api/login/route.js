@@ -2,7 +2,7 @@ import { cookies } from 'next/headers'
 
 export async function POST() {
   const cookieStore = cookies()
-  cookieStore.set('my-http-only-cookie', 'cookie-value', {
+  cookieStore.set('my-http-only-cookie', 'MY_SECRET_TOKEN', {
     httpOnly: true,
     path: '/',
   })
