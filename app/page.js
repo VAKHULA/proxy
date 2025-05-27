@@ -2,9 +2,9 @@
 
 export default function Home() {
   return (
-    <div>
-      <br/>
-      <button
+    <div className="container">
+      <article style={{ margin: '0 auto', padding: '3rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <button
         onClick={async () => {
           let data = await fetch('/api/proxy/data', { method: 'GET', credentials: 'include' })
           data = await data.json()
@@ -52,6 +52,9 @@ export default function Home() {
       >
         CLEAR COOKIES
       </button>
+      <br/><br/>
+      <a href='https://github.com/VAKHULA/proxy'>https://github.com/VAKHULA/proxy</a>
+      </article>
     </div>
   );
 }
