@@ -32,6 +32,25 @@ export default function Home() {
       >
         GET COOKIES
       </button>
+      <br/><br/>
+      <button
+        onClick={async () => {
+          let data = await fetch('/api/get_token', { method: 'POST' })
+          data = await data.json()
+          alert(JSON.stringify(data))
+        }}
+      >
+        GET TOKEN
+      </button>
+      <br/><br/>
+      <button
+        onClick={async () => {
+          const cookies =  await cookieStore.getAll()
+          cookies.delete('my-http-only-cookie')
+        }}
+      >
+        CLEAR COOKIES
+      </button>
     </div>
   );
 }
