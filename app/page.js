@@ -42,7 +42,7 @@ export default function Home() {
           alert(JSON.stringify(data))
         }}
       >
-        LOGIN (set http only cookies on server)
+        LOGIN
       </button>
       <br/><br/>
       <button
