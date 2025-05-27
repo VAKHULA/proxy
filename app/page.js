@@ -18,22 +18,12 @@ export default function Home() {
       // iframe.remove()
     });
 
-    iframe.src = 'http://localhost:3000/iframe'
+    iframe.src = '/iframe'
     document.body.appendChild(iframe);
   }, [])
 
   return (
     <div className="container">
-       <script
-         // dangerous script
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.addEventListener("message", (event) => {
-              console.log("dangerous user script can read this:", event.data);
-            });
-          `
-        }}
-      />
       <article style={{ margin: '0 auto', padding: '3rem', display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: '99vh' }}>
         <button
         onClick={async () => {
@@ -94,6 +84,16 @@ export default function Home() {
       <br/><br/>
       <a href='https://github.com/VAKHULA/proxy'>https://github.com/VAKHULA/proxy</a>
       </article>
+      <script
+         // dangerous script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.addEventListener("message", (event) => {
+              console.log("dangerous user script can read this:", event.data);
+            });
+          `
+        }}
+      />
     </div>
   );
 }
