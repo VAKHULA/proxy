@@ -82,6 +82,16 @@ export default function Home() {
         GET TOKEN FROM IFRAME
       </button>
       <br/><br/>
+      <button
+        onClick={async () => {
+          let data = await fetch('/api/refresh', { method: 'POST' })
+          data = await data.json()
+          alert(JSON.stringify(data))
+        }}
+      >
+        refresh
+      </button>
+      <br/><br/>
       <a href='https://github.com/VAKHULA/proxy'>https://github.com/VAKHULA/proxy</a>
       </article>
       <script
