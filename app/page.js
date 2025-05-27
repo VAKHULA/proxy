@@ -35,7 +35,7 @@ export default function Home() {
       <br/><br/>
       <button
         onClick={async () => {
-          let data = await fetch('/api/get_token', { method: 'POST' })
+          let data = await fetch('/api/get_token', { method: 'GET' })
           data = await data.json()
           alert(JSON.stringify(data))
         }}
@@ -45,8 +45,9 @@ export default function Home() {
       <br/><br/>
       <button
         onClick={async () => {
+          await fetch('/api/delete', { method: 'GET' })
           const cookies =  await cookieStore.getAll()
-          cookies.delete('my-http-only-cookie')
+          alert(JSON.stringify(cookies))
         }}
       >
         CLEAR COOKIES
